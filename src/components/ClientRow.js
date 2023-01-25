@@ -6,7 +6,7 @@ export const ClientRow = ({client}) => {
         <td>{client.name}</td>
         <td>{client.email}</td>
         <td>{client.phone}</td>
-        <td><DeleteOutlineOutlinedIcon /></td>
+        <td><button><DeleteOutlineOutlinedIcon /></button></td>
     </tr>
   )
 }
