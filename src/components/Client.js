@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { ClientRow } from "./ClientRow";
-import { GET_CLIENT } from "./Queries/clientQueries";
+import { GET_CLIENT } from "../queries/clientQueries";
 
 
 
@@ -12,23 +12,22 @@ export const Client = () => {
 
       return (
       <>
-      
        {!loading && !error && (
         <table class="table-fixed space-x-12">
-        <thead>
-          <tr>
-            <th>Song</th>
-            <th>Artist</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.staffs.map(client => (
-            <ClientRow  key={client.id} client={client}/>
-          ))}
-        </tbody>
-      </table>
+          <thead>
+            <tr>
+              <th>Song</th>
+              <th>Artist</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.staffs.map(client => (
+              <ClientRow  key={client.id} client={client}/>
+            ))}
+          </tbody>
+        </table>
        )}
       </>
-      )
+    )
 }

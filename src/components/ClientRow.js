@@ -9,4 +9,4 @@ export const ClientRow = ({client}) => {
         <td><button><DeleteOutlineOutlinedIcon /></button></td>
     </tr>
   )
-}
+};
