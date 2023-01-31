@@ -11,16 +11,16 @@ export const ClientRow = ({client}) => {
     variables: { id: client.id},
 
     update(cache, {data: {deleteStaff}}) {
-      const {clients} = cache.readQuery({query: GET_CLIENT });
+      const { clients } = cache.readQuery({query: GET_CLIENT });
       cache.writeQuery({
         query: GET_CLIENT,
-        data: clients.filter(client => client.id !== deleteStaff.id)
+        data: {clients: clients?.filter(client => client.id !== deleteStaff.id)}
       })
- 
     }
   });  
 
-  console.log(client.id)
+  // console.log(client.id)
+  console.log(deleteStaff.id)
   return (
     <tr>
       <td>{client.name}</td>
